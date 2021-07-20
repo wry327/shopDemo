@@ -27,6 +27,7 @@
     </style>
 </head>
 <body class="layui-layout-body layuimini-all">
+
 <div class="layui-layout layui-layout-admin">
 
     <div class="layui-header header">
@@ -136,9 +137,9 @@
 
         var options = {
 
-            iniUrl: "${pageContext.request.contextPath}/api/init.json",    // 初始化接口，管理
+            iniUrl: "${pageContext.request.contextPath}/library/api/init.json",    // 初始化接口，管理
 
-            clearUrl: "${pageContext.request.contextPath}/api/clear.json", // 缓存清理接口
+            clearUrl: "/library/api/clear.json", // 缓存清理接口
             urlHashLocation: true,      // 是否打开hash定位
             bgColorDefault: false,      // 主题默认配置
             menuChildOpen: true,       // 是否默认展开菜单
@@ -153,7 +154,7 @@
                 icon: 6,
                 time: 500
             },function () {
-                window.location = '${pageContext.request.contextPath}/loginOut';
+                window.location = '/loginOut';
             });
         });
     });
