@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
@@ -125,7 +125,7 @@
                     maxmin:true,
                     shadeClose: true,
                     area: ['60%', '60%'],
-                    content: '${pageContext.request.contextPath}/queryAdminById?id='+data.id,
+                    content: '/queryAdminById?id='+data.id,
                 });
                 $(window).on("resize", function () {
                     layer.full(index);
@@ -163,7 +163,7 @@
         function deleteInfoByIds(ids ,index){
             //向后台发送请求
             $.ajax({
-                url: "deleteAdminByIds",
+                url: "/deleteAdminByIds",
                 type: "POST",
                 data: {ids: ids},
                 success: function (result) {
@@ -195,7 +195,7 @@
                     maxmin:true,
                     shadeClose: true,
                     area: ['60%', '60%'],
-                    content: '${pageContext.request.contextPath}/adminAdd',
+                    content: '/adminAdd',
                 });
                 $(window).on("resize", function () {
                     layer.full(index);

@@ -41,4 +41,49 @@ public class AdminService {
             return false;
         }
     }
+
+    /*添加管理员*/
+    public Boolean addAdmin(Admin admin)
+    {
+        int addResult = adminDao.addAdmin(admin.getUsername(),admin.getPassword(),admin.getAdminType());
+
+        /*根据返回的整数判断是否添加成功*/
+        if(addResult>0)
+        {
+            /*返回true表示添加成功*/
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /*删除管理员*/
+    public Boolean deleteAdmin(List<Integer> ids)
+    {
+        int deletResult = adminDao.deleteAdminByIDS(ids);
+
+        if(deletResult>0)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /*修改管理员密码*/
+    public Boolean updatePwd(int id,String oldPwd,String newPwd)
+    {
+        int updateReuslt = adminDao.updatePwd(id,oldPwd,newPwd);
+
+        if(updateReuslt>0)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

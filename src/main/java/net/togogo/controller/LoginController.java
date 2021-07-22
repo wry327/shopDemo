@@ -1,7 +1,9 @@
 package net.togogo.controller;
 
 import net.togogo.domain.Admin;
+import net.togogo.domain.Notice;
 import net.togogo.service.AdminService;
+import net.togogo.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,9 @@ public class LoginController {
 
     @Autowired
     AdminService adminService;
+
+    @Autowired
+    NoticeService noticeService;
 
     /*访问登录页面*/
     @RequestMapping("/toLogin")
@@ -39,8 +44,10 @@ public class LoginController {
 
     /*访问欢迎页面*/
     @RequestMapping("/welcome")
-    public String welcome()
+    public String welcome(Model model)
     {
+        /*欢迎页面需要展示公告信息，查询公告信息并且放到model内传回页面*/
+        model.addAttribute("noticeList",noticeService.getAllNotices());
         return "welcome";
     }
 }

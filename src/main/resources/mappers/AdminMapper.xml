@@ -11,4 +11,19 @@
     <select id="getAdminByUP" resultType="net.togogo.domain.Admin">
         select * from admin where username=#{param1} and password=#{param2}
     </select>
+
+    <insert id="addAdmin" >
+        insert into admin(username,password,adminType) values(#{param1},#{param2},#{param3})
+    </insert>
+
+    <delete id="deleteAdminByIDS" parameterType="list">
+        delete from admin where id in
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="updatePwd" parameterType="object" >
+        update admin set password=#{param3} where id=#{param1} and password=#{param2}
+    </update>
 </mapper>

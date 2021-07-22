@@ -10,4 +10,14 @@ public interface AdminDao {
 
     /*验证登录*/
     public Admin getAdminByUP(String username,String password);
+
+    /*添加管理员*/
+    public int addAdmin(String username,String password,int adminType);
+
+    /*删除管理员*/
+    public int deleteAdminByIDS(List<Integer> ids);
+
+    /*修改密码*/
+    public int updatePwd(int id,String oldPwd,String newPwd);
+
 }

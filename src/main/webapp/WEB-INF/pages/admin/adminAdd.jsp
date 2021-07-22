@@ -9,8 +9,8 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/lib/layui-v2.5.5/css/layui.css" media="all">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/public.css" media="all">
+    <link rel="stylesheet" href="/library/lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="/library/css/public.css" media="all">
     <style>
         body {
             background-color: #ffffff;
@@ -47,7 +47,7 @@
         </div>
     </div>
 </div>
-<script src="${pageContext.request.contextPath}/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/library/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
 <script>
     layui.use(['form'], function () {
         var form = layui.form,
